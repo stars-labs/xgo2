@@ -3,6 +3,6 @@
 #
 # Released under the MIT license.
 
-FROM youchain/xgo2:1.13.x
+FROM starslab/xgo2:1.17.3
 
 LABEL MAINTAINER Péter Szilágyi <peterke@gmail.com>

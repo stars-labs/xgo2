@@ -33,11 +33,6 @@ export GOROOT=/usr/local/go
 export GOROOT_BOOTSTRAP=$GOROOT
 
 # Extract all other packages as secondary ones, keeping only the binaries
-if [ "$DIST_LINUX_32" != "" ]; then
-  tar -C /usr/local --wildcards -xzf `basename $DIST_LINUX_32` go/pkg/linux_386*
-  GOOS=linux GOARCH=386 /usr/local/go/pkg/tool/linux_amd64/dist bootstrap
-  rm -f `basename $DIST_LINUX_32`
-fi
 if [ "$DIST_LINUX_ARM" != "" ]; then
   tar -C /usr/local --wildcards -xzf `basename $DIST_LINUX_ARM` go/pkg/linux_arm*
   GOOS=linux GOARCH=arm /usr/local/go/pkg/tool/linux_amd64/dist bootstrap
@@ -48,11 +43,6 @@ if [ "$DIST_OSX_64" != "" ]; then
   tar -C /usr/local --wildcards -xzf `basename $DIST_OSX_64` go/pkg/darwin_amd64*
   GOOS=darwin GOARCH=amd64 /usr/local/go/pkg/tool/linux_amd64/dist bootstrap
   rm -f `basename $DIST_OSX_64`
-fi
-if [ "$DIST_OSX_32" != "" ]; then
-  tar -C /usr/local --wildcards -xzf `basename $DIST_OSX_32` go/pkg/darwin_386*
-  GOOS=darwin GOARCH=386 /usr/local/go/pkg/tool/linux_amd64/dist bootstrap
-  rm -f `basename $DIST_OSX_32`
 fi
 
 if [ "$DIST_WIN_64" != "" ]; then

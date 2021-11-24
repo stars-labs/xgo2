@@ -2,11 +2,7 @@
 
 fork from:
 
-https://github.com/gythialy/xgo
-
-which fork from:
-
-https://github.com/karalabe/xgo
+https://github.com/youchainhq/xgo2
 
 using Docker Hub to hold the images
 
@@ -29,5 +25,5 @@ xgo2 --envlist="GOPRIVATE=private.git.repo.com"
 # install
 
 ```go
-go get -u github.com/youchainhq/xgo2
+go get -u github.com/stars-labs/xgo2
 ```

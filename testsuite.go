@@ -9,6 +9,7 @@
 //
 // Run as: go run testsuite.go
 
+//go:build ignore
 // +build ignore
 
 package main
@@ -29,16 +30,9 @@ var layers = []struct {
 	tag string
 	dir string
 }{
-	{"youchain/xgo2:base", "base"},
-	// {"youchain/xgo2:1.11.9", "go-1.11.9"},
-	// {"youchain/xgo2:1.11.x", "go-1.11.x"},
-	// {"youchain/xgo2:1.12.0", "go-1.12.0"},
-	// {"youchain/xgo2:1.12.1", "go-1.12.1"},
-	// {"youchain/xgo2:1.12.2", "go-1.12.2"},
-	// {"youchain/xgo2:1.12.3", "go-1.12.3"},
-	{"youchain/xgo2:1.12.4", "go-1.12.4"},
-	{"youchain/xgo2:1.12.x", "go-1.12.x"},
-	{"youchain/xgo2:latest", "go-latest"},
+	{"starslab/xgo2:base", "base"},
+	{"starslab/xgo2:1.17.3", "go-1.12.4"},
+	{"starslab/xgo2:latest", "go-latest"},
 }
 
 // tests defaines all the input test cases and associated arguments the cross

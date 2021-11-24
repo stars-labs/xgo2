@@ -3,10 +3,10 @@
 #
 # Released under the MIT license.
 
-FROM youchain/xgo2:base
+FROM starslab/xgo2:base
 
 LABEL MAINTAINER Péter Szilágyi <peterke@gmail.com>
 
 # Clone and bootstrap the latest Go develop branch
 RUN $BOOTSTRAP_REPO master
-ENV GO_VERSION 999
+ENV GO_VERSION 1173

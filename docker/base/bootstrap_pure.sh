@@ -19,6 +19,7 @@ set -e
 if [ "$GOROOT" == "" ]; then
   $FETCH $ROOT_DIST $ROOT_DIST_SHA
 
+  rm -rf /usr/local/go
   tar -C /usr/local -xzf `basename $ROOT_DIST`
   rm -f `basename $ROOT_DIST`
 
@@ -58,10 +59,8 @@ GOOS=windows GOARCH=386 CGO_ENABLED=1 CC=i686-w64-mingw32-gcc go install std
 echo "Bootstrapping darwin/amd64..."
 GOOS=darwin GOARCH=amd64 CGO_ENABLED=1 CC=o64-clang go install std
 
-echo "Bootstrapping darwin/386..."
-GOOS=darwin GOARCH=386 CGO_ENABLED=1 CC=o32-clang go install std
-
 # Install xgo within the container to enable internal cross compilation
 echo "Installing xgo-in-xgo..."
-go get -u github.com/gythialy/xgo
+GOPROXY=https://goproxy.cn,direct go get -u github.com/gythialy/xgo
+rm -rf /usr/bin/xgo
 ln -s /go/bin/xgo /usr/bin/xgo
